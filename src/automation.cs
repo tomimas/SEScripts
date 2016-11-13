@@ -1,4 +1,5 @@
-//by Peikko    
+//by tomimas
+//https://github.com/tomimas/SEScripts   
     
 void Main(string argument) {
   string STATUS_PANEL = "LCD (Automation)";  
