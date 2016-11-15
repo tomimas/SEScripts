@@ -16,15 +16,15 @@ void cargoSpace(iIMyTextPanel panel) {
   GridTerminalSystem.GetBlocksOfType<IMyShipDrill>(containers);
   GridTerminalSystem.GetBlocksOfType<IMyCargoContainer>(containers);
 
-  float currentVolume = 0;
-  float maxVolume = 0;
+  float currentVolume = 0f;
+  float maxVolume = 0f;
   for (int i = 0; i < containers.Count; ++i) {
     IMyInventoryOwner inventoryOwner = containers[i] as IMyInventoryOwner;
     IMyInventory inventory = inventoryOwner.GetInventory(0);
     currentVolume += (float) inventory.CurrentVolume;
     maxVolume += (float)inventory.MaxVolume;
   }
-  rewrite(panel, "Cargo: " + currentVolume + " / " + maxVolume +" (" + Math.Round(currentVolume/maxVolume*100, 0)  +"%)");
+  rewrite(panel, "Cargo: " + currentVolume + " / " + maxVolume + " (" + Math.Round(currentVolume/maxVolume*100f, 0)  +"%)");
 }
 
 void rewrite(IMyTextPanel panel, String text) {
