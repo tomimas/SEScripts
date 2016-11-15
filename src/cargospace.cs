@@ -1,6 +1,6 @@
 //by tomimas
 //https://github.com/tomimas/SEScripts   
-    
+
 void Main(string argument) {
   string STATUS_PANEL = "LCD (Cargo)";  
   IMyTextPanel panel = GridTerminalSystem.GetBlockWithName(STATUS_PANEL) as IMyTextPanel;
@@ -22,9 +22,9 @@ void cargoSpace(iIMyTextPanel panel) {
     IMyInventoryOwner inventoryOwner = containers[i] as IMyInventoryOwner;
     IMyInventory inventory = inventoryOwner.GetInventory(0);
     currentVolume += (float) inventory.CurrentVolume;
-    maxVolume += (float)inventory.MaxVolume;
+    maxVolume += (float) inventory.MaxVolume;
   }
-  rewrite(panel, "Cargo: " + currentVolume + " / " + maxVolume + " (" + Math.Round(currentVolume/maxVolume*100f, 0)  +"%)");
+  rewrite(panel, "Cargo: " + currentVolume + " / " + maxVolume + " (" + Math.Round(currentVolume/maxVolume*100f, 0)  + "%)");
 }
 
 void rewrite(IMyTextPanel panel, String text) {
