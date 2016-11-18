@@ -25,7 +25,7 @@ void cargoSpace(IMyTextPanel panel) {
     currentVolume += (float) inventory.CurrentVolume;
     maxVolume += (float) inventory.MaxVolume;
   }
-  rewrite(panel, "Cargo:\n" + (currentVolume * 1000) + " / " + (maxVolume * 1000) + "\n(" + Math.Round(currentVolume/maxVolume*100f, 0)  + "%)");
+  rewrite(panel, "Cargo:\n" + (currentVolume * 1000).ToString("n0") + "\n(" + Math.Round(currentVolume/maxVolume*100f, 0)  + "%)");
 }
 
 void rewrite(IMyTextPanel panel, String text) {

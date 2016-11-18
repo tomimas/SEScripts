@@ -51,14 +51,14 @@ float getItemCount(List<IMyTerminalBlock> blocks, string type) {
 }
 
 void batteryInfo(IMyTextPanel panel) {
-  List<IMyTerminalBlock> batteries = new List<IMyTerminalBlock>();
+  List<IMyBatteryBlock> batteries = new List<IMyBatteryBlock>();
   GridTerminalSystem.GetBlocksOfType<IMyBatteryBlock>(batteries);
   string status = "";
   for (int i = 0; i < batteries.Count; i++) {
-    status += "#";
     status += (i+1);
-    status += ": ";
-    status += batteries[i].CurrentStoredPower.ToString("n2");
+    status += ". ";
+    status += (batteries[i].CurrentStoredPower * 1000).ToString("n2");
+    status += " kW";
     status += batteries[i].IsCharging ? " (Charging)" : "";
     status += "\n";
   }
